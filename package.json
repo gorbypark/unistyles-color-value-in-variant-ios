@@ -8,7 +8,9 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
+    "ts": "tsc --noEmit --strict",
     "lint": "expo lint",
+    "validate": "yarn ts && yarn lint",
     "prebuild": "expo prebuild --clean"
   },
   "dependencies": {
