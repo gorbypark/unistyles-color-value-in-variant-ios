@@ -1,13 +1,16 @@
 import { StyleSheet } from "react-native-unistyles";
 
 import { breakpoints } from "@/theme/breakpoints";
-import { darkColors } from "@/theme/colors/darkColors";
-import { lightColors } from "@/theme/colors/lightColors";
+import { darkColors } from "@/theme/colors/dark-colors";
+import { lightColors } from "@/theme/colors/light-colors";
 import { gaps } from "@/theme/gaps";
+
+import { radii } from "./radii";
 
 const lightTheme = {
   colors: lightColors,
   gap: gaps,
+  radii: radii,
 };
 
 const darkTheme = { ...lightTheme, colors: darkColors };

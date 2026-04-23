@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native-unistyles";
 
+import { Button } from "@/components/button";
 import { Text } from "@/components/text";
 import { View } from "@/components/view";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
@@ -15,12 +16,25 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
       <Text>Is dark mode? {isDark ? "true" : "false"}</Text>
-      <Text>Current theme name: {themeName} </Text>
+      <Text>Current theme name: {themeName}</Text>
       <Text>Current breakpoint: {breakpoint}</Text>
       <Text>Current height: {height}</Text>
       <Text>Current width: {width}</Text>
+      <Button>Primary lg</Button>
+      <Button variant="secondary">Secondary lg</Button>
+      <Button variant="destructive">Destructive lg</Button>
+      <Button variant="ghost">Ghost lg</Button>
+      <Button size="sm">Primary sm</Button>
+      <Button variant="secondary" size="sm">
+        Secondary sm
+      </Button>
+      <Button variant="destructive" size="sm">
+        Destructive sm
+      </Button>
+      <Button variant="ghost" size="sm">
+        Ghost sm
+      </Button>
     </View>
   );
 }
@@ -29,6 +43,7 @@ const styles = StyleSheet.create((theme) => ({
   container: {
     flex: 1,
     justifyContent: "center",
-    paddingLeft: theme.gap.xxl,
+    paddingHorizontal: theme.gap.xxl,
+    gap: theme.gap.sm,
   },
 }));
