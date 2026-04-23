@@ -11,6 +11,7 @@ module.exports = defineConfig([
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
       "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-empty-object-type": ["warn", { allowInterfaces: "with-single-extends" }],
     },
   },
   {
