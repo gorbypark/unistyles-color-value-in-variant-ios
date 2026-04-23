@@ -1,6 +1,6 @@
 import { useUnistyles } from "react-native-unistyles";
 
-export const useColorScheme = () => {
+export const useThemeName = () => {
   const { rt } = useUnistyles();
-  return rt.colorScheme;
+  return rt.themeName;
 };
