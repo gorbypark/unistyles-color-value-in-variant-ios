@@ -1,8 +1,9 @@
+import { StyleSheet } from "react-native-unistyles";
+
 import { Text } from "@/components/text";
 import { View } from "@/components/view";
 import { useIsDark } from "@/hooks/use-is-dark";
 import { useThemeName } from "@/hooks/use-theme-name";
-import { StyleSheet } from "react-native-unistyles";
 
 export default function Index() {
   const isDark = useIsDark();
