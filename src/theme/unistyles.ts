@@ -29,6 +29,7 @@ StyleSheet.configure({
   themes: appThemes,
   settings: {
     adaptiveThemes: true,
+    nativeBreakpointsMode: "points",
   },
   breakpoints,
 });
