@@ -7,16 +7,18 @@ const styles = StyleSheet.create((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: theme.radii.xs,
+    borderColor: theme.colors.platform.systemRed, // ColorValue not in a variant works
+    borderWidth: 1,
     variants: {
       variant: {
         primary: {
-          backgroundColor: theme.colors.primary,
+          backgroundColor: theme.colors.platform.systemRed, // The same color values in a variant do not work.
         },
         secondary: {
-          backgroundColor: theme.colors.secondary,
+          backgroundColor: theme.colors.platform.secondarySystemFill,
         },
         destructive: {
-          backgroundColor: theme.colors.destructive,
+          backgroundColor: theme.colors.platform.systemRed,
         },
         ghost: {
           backgroundColor: "transparent",
@@ -39,16 +41,16 @@ const styles = StyleSheet.create((theme) => ({
     variants: {
       variant: {
         primary: {
-          color: theme.colors.primaryForeground,
+          color: theme.colors.platform.lightText,
         },
         secondary: {
-          color: theme.colors.secondaryForeground,
+          color: theme.colors.platform.label,
         },
         destructive: {
-          color: theme.colors.destructiveForeground,
+          color: theme.colors.platform.lightText,
         },
         ghost: {
-          color: theme.colors.primary,
+          color: theme.colors.platform.systemBlue,
         },
       },
       size: {

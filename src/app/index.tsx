@@ -5,6 +5,7 @@ import { Text } from "@/components/text";
 import { View } from "@/components/view";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import { useIsDark } from "@/hooks/use-is-dark";
+import { useSafeAreaInsets } from "@/hooks/use-safe-area-insets";
 import { useThemeName } from "@/hooks/use-theme-name";
 import { useWindowDimensions } from "@/hooks/use-window-dimensions";
 
@@ -13,6 +14,8 @@ export default function Index() {
   const themeName = useThemeName();
   const breakpoint = useBreakpoint();
   const { width, height } = useWindowDimensions();
+
+  const insets = useSafeAreaInsets();
 
   return (
     <View style={styles.container}>
@@ -35,6 +38,7 @@ export default function Index() {
       <Button variant="ghost" size="sm">
         Ghost sm
       </Button>
+      <Text>{JSON.stringify(insets)}</Text>
     </View>
   );
 }
@@ -45,5 +49,6 @@ const styles = StyleSheet.create((theme) => ({
     justifyContent: "center",
     paddingHorizontal: theme.gap.xxl,
     gap: theme.gap.sm,
+    backgroundColor: theme.colors.platform.systemGray4, // This is a ColorValue and works
   },
 }));

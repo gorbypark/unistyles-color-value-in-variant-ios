@@ -1,3 +1,5 @@
+import { platformColors } from "@/theme/colors/platform";
+
 export const lightColors = {
   primary: "blue",
   primaryForeground: "#ffffff",
@@ -5,4 +7,5 @@ export const lightColors = {
   secondaryForeground: "#0f172a",
   destructive: "#ef4444",
   destructiveForeground: "#ffffff",
+  platform: platformColors,
 };
