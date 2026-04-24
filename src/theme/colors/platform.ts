@@ -92,8 +92,14 @@ export const platformColors = {
   systemPurple: p(Color.ios.systemPurple, Color.android.dynamic.tertiary),
   systemIndigo: p(Color.ios.systemIndigo, Color.android.dynamic.tertiary),
   systemTeal: p(Color.ios.systemTeal, Color.android.dynamic.secondary),
-  systemCyan: p(Color.ios.systemCyan, Color.android.dynamic.secondaryContainer),
-  systemMint: p(Color.ios.systemMint, Color.android.dynamic.secondaryContainer),
+  systemCyan: p(
+    Color.ios.systemCyan,
+    Color.android.dynamic.secondaryContainer,
+  ),
+  systemMint: p(
+    Color.ios.systemMint,
+    Color.android.dynamic.secondaryContainer,
+  ),
   systemBrown: p(
     Color.ios.systemBrown,
     Color.android.dynamic.tertiaryContainer,

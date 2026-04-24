@@ -1,4 +1,4 @@
-import { platformColors } from "@/theme/colors/platform";
+import { platformColors } from "@/theme/colors/platform-light";
 
 export const lightColors = {
   primary: "blue",

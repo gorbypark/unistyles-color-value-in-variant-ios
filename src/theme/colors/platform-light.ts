@@ -1,0 +1,1 @@
+export { platformColors } from "./platform";

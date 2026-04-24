@@ -3,16 +3,17 @@ import { StyleSheet } from "react-native-unistyles";
 
 const styles = StyleSheet.create((theme) => ({
   button: {
-    alignSelf: "flex-start",
+    // alignSelf: {
+    //   xs: "center",
+    //   xl: "flex-start",
+    // },
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: theme.radii.xs,
-    borderColor: theme.colors.platform.systemRed, // ColorValue not in a variant works
-    borderWidth: 1,
+    borderRadius: theme.radii.sm,
     variants: {
       variant: {
         primary: {
-          backgroundColor: theme.colors.platform.systemRed, // The same color values in a variant do not work.
+          backgroundColor: theme.colors.platform.systemFill, // The same color values in a variant do not work.
         },
         secondary: {
           backgroundColor: theme.colors.platform.secondarySystemFill,
@@ -34,6 +35,11 @@ const styles = StyleSheet.create((theme) => ({
           paddingHorizontal: theme.gap.md,
         },
       },
+      disabled: {
+        true: {
+          backgroundColor: "red",
+        },
+      },
     },
   },
   label: {
@@ -41,13 +47,13 @@ const styles = StyleSheet.create((theme) => ({
     variants: {
       variant: {
         primary: {
-          color: theme.colors.platform.lightText,
-        },
-        secondary: {
           color: theme.colors.platform.label,
         },
+        secondary: {
+          color: theme.colors.platform.secondaryLabel,
+        },
         destructive: {
-          color: theme.colors.platform.lightText,
+          color: theme.colors.platform.label,
         },
         ghost: {
           color: theme.colors.platform.systemBlue,
@@ -61,6 +67,11 @@ const styles = StyleSheet.create((theme) => ({
           fontSize: 16,
         },
       },
+      disabled: {
+        true: {
+          color: theme.colors.primary,
+        },
+      },
     },
   },
 }));
@@ -69,23 +80,31 @@ type Variants = NonNullable<Parameters<typeof styles.useVariants>[0]>;
 type ButtonVariant = NonNullable<Variants["variant"]>;
 type ButtonSize = NonNullable<Variants["size"]>;
 
-interface ButtonProps extends Omit<PressableProps, "style"> {
+interface ButtonProps extends Omit<PressableProps, "style" | "disabled"> {
   variant?: ButtonVariant;
+  disabled?: boolean;
   size?: ButtonSize;
   children: string;
 }
 
 export const Button = ({
   variant = "primary",
+  disabled = false,
   size = "lg",
   children,
   ...rest
 }: ButtonProps) => {
-  styles.useVariants({ variant, size });
+  styles.useVariants({
+    variant,
+    size,
+    disabled: disabled ? "true" : undefined,
+  });
 
   return (
-    <Pressable style={styles.button} {...rest}>
-      <Text style={styles.label}>{children}</Text>
+    <Pressable style={styles.button} disabled={disabled} {...rest}>
+      <Text style={styles.label} disabled={disabled}>
+        {children}
+      </Text>
     </Pressable>
   );
 };

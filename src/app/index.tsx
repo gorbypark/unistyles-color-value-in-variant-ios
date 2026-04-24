@@ -35,7 +35,7 @@ export default function Index() {
       <Button variant="destructive" size="sm">
         Destructive sm
       </Button>
-      <Button variant="ghost" size="sm">
+      <Button variant="ghost" size="sm" disabled>
         Ghost sm
       </Button>
       <Text>{JSON.stringify(insets)}</Text>
@@ -49,6 +49,6 @@ const styles = StyleSheet.create((theme) => ({
     justifyContent: "center",
     paddingHorizontal: theme.gap.xxl,
     gap: theme.gap.sm,
-    backgroundColor: theme.colors.platform.systemGray4, // This is a ColorValue and works
+    backgroundColor: theme.colors.platform.systemGray4,
   },
 }));
